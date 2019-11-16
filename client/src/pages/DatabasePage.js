@@ -6,6 +6,8 @@ import Logo from "../components/Logo";
 
 import SearchForm from "../components/SearchForm"
 
+import DatabaseData from "../components/DatabaseData"
+
 import logoImage from "../images.json";
 
 import API from "../utils/API"
@@ -28,11 +30,11 @@ class DatabasePage extends React.Component {
 
     }
 
-    getJob = id => {
-        API.getJob(id)
-        .then(res => this.loadJobs())
-        .catch(err => console.log(err))        
-    }
+    // getJob = id => {
+    //     API.getJob(id)
+    //     .then(res => this.loadJobs())
+    //     .catch(err => console.log(err))        
+    // }
 
 
     deleteJob = id => {
@@ -52,9 +54,7 @@ class DatabasePage extends React.Component {
         return (
             <Container>
                 <Logo image={logoImage[0].image} name={logoImage[0].name} />
-            
-               <h1>Database Page</h1>
-            
+                <DatabaseData results={this.state.results}/>            
             </Container>
         )
     }
