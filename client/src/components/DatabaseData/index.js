@@ -1,24 +1,29 @@
 import React from "react";
 
+import { Link } from "react-router-dom"
+
 function DatabaseData(props) {
   return (
-    <ul className="list-group search-results card">
+    <ul className="list-group">
       {props.results.map(result => (
-        <li key={result} className="list-group-item card-body">
-          <p>{result.id} </p>
-          <p>{result.company}</p>
-          <p>{result.snippet} </p>
-          <p>{result.role} </p>
+        <li key={result._id} className="list-group-item card-body font-weight-bold mt-3">
+          <p>ID: {result._id} </p>
+          <p>COMPANY: {result.company_name}</p>
+          <p>LOCATION: {result.location} </p>
+          <p>POSITION: {result.position} </p>
+          <p>JOB DESCRIPTION: {result.description} </p>
+          <p>APPLICATION DATE: {result.application_date} </p>
+          <p>DOCUMENT: {result.documents} </p>
 
-            {/* edit button */}
-            <button className="card-button">
-                <Link to={"/api/pesa/"+ result.id} className={window.location.pathname === "api/pesa"}>
-                  Edit
-                </Link>
+          {/* edit button */}
+          <Link to={"/api/pesa/"+ result.id} className={window.location.pathname === "api/pesa"}>
+            <button className="card-button btn btn-success">
+              Edit
             </button>
-
-             {/* delete button */}
-            <button className="card-button" onClick={()=> props.deleteJob(result.id)}>
+            </Link>
+             
+            {/* delete button */}
+            <button className="card-button btn btn-success ml-3" onClick={()=> props.deleteJob(result.id)}>
               Delete
             </button>
         </li>

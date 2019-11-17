@@ -1,6 +1,4 @@
-import React from "react";
-
-import { Link } from "react-router-dom";
+import React, { Component } from "react";
 
 import { Container, Row, Col } from "../components/Grid";
 
@@ -10,15 +8,23 @@ import SearchForm from "../components/SearchForm"
 
 import SearchResult from "../components/SearchResult"
 
+import FormFill from "../components/FormFill"
+
 import logoImage from "../images.json";
 
 import API from "../utils/API"
 
-class SearchPage extends React.Component {
+
+class SearchPage extends Component {
     state = {
 
         search: "",
+        company: "",
         location: "",
+        position: "",
+        description: "",
+        date: "",
+        document: "",
         results: []
     }
 
@@ -32,38 +38,52 @@ class SearchPage extends React.Component {
 
     handleInputChange = event => {
 
-        const { search, location } = event.target;
+        // const { search, company, location , position, description, date, document } = event.target;
 
-        this.setState({ 
-            search: search,
-            location: location
-        });
+        // this.setState({ 
+        //     search: event.target.search,
+        //     company: event.target.company,
+        //     location: event.target.location,
+        //     position: event.target.position,
+        //     description: event.target.description,
+        //     date: event.target.date,
+        //     document: event.target.document
+        // });
+
+        const { name, value } = event.target;
+
+        this.setState({
+            [name] : value
+        })
       
     };
 
-    handleFormSubmit(event) {
-        event.preventDefault();    
-        API.search(this.state.search, this.state.location)
-      .then(res => {
-        if (res.data.status === "error") {
-          throw new Error(res.data.message);
-        }
-        this.setState({ results: res.data.message, error: "" });
-      })
-      .catch(err => this.setState({ error: err.message }));
+    handleFormSubmit = event => {
+        event.preventDefault(); 
+  
+
+        console.log(this);
+
+        API.saveJob({
+            company_name: this.state.company,
+            location: this.state.location,
+            position: this.state.position,
+            description: this.state.description,
+            application_date: this.state.date,
+            documents: this.state.document
+
+        })
+      .then(res => this.getJobs())
+      .catch(err => console.log(err));
 
     }
 
-    saveJob({data}) {
-
-        API.saveJob({data})
-        
-    }
+   
 
     render () {
         return (
 
-            // <Container fluid>
+        
             <div>
             <div className="d-flex justify-content-between border-bottom ml-2 mr-2">
             <Row>
@@ -73,24 +93,36 @@ class SearchPage extends React.Component {
             </Row>
             <Row className="ml-5">
                 <Col size="md-12">
-                <SearchForm 
-                search={this.state.search}
+                {/* <SearchForm 
+               search={this.state.search}
                 location={this.state.location}
-                handleInputChange={this.handleInputChange}
-                handleFormSubmit={this.handleFormSubmit}
-                />
+                onChange={this.handleInputChange}
+               onClick={this.handleFormSubmit}
+                /> */}
+                
               </Col>
+              
                 
             </Row>
             </div>
-            <SearchResult results={this.state.results} saveJob={this.saveJob}/>
-            <button className="">
-                <Link to="api/pesa" className={window.location.pathname === "api/pesa"}>
-                    View Jobs
-                </Link>
-            </button>
+            
+            <div className="ml-5">
+            <FormFill 
+            company={this.state.company}
+            location={this.state.location}
+            position={this.state.position}
+            description={this.state.description}
+            date={this.state.date}
+            document={this.state.document}
+            handleInputChange={this.handleInputChange}
+            handleFormSubmit={this.handleFormSubmit}
+            />
+           
             </div>
-            // </Container>
+
+            </div>
+        
+         
         )
     }
 
