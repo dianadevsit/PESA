@@ -16,14 +16,14 @@ function DatabaseData(props) {
           <p>DOCUMENT: {result.documents} </p>
 
           {/* edit button */}
-          <Link to={"/api/pesa/"+ result.id} className={window.location.pathname === "api/pesa"}>
+          <Link to={"/api/pesa/"+ result._id} className={window.location.pathname === "/api/pesa"+ result._id}>
             <button className="card-button btn btn-success">
               Edit
             </button>
             </Link>
              
             {/* delete button */}
-            <button className="card-button btn btn-success ml-3" onClick={()=> props.deleteJob(result.id)}>
+            <button className="card-button btn btn-success ml-3" key={result._id} onClick={() => props.deleteJob(result._id)}>
               Delete
             </button>
         </li>
