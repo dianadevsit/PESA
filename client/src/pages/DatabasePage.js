@@ -19,9 +19,12 @@ class DatabasePage extends React.Component {
     }
     
     componentDidMount() {
+
         this.loadJobs()
+
     }
 
+    
     loadJobs = () => {
 
         API.getJobs()
@@ -30,22 +33,13 @@ class DatabasePage extends React.Component {
 
     }
 
-    // getJob = id => {
-    //     API.getJob(id)
-    //     .then(res => this.loadJobs())
-    //     .catch(err => console.log(err))        
-    // }
 
-
+    
     deleteJob = id => {
         API.deleteJob(id)
-        .then(res => this.loadJobs())
-        .catch(err => console.log(err))
-    }
-
-    editJob = id => {
-        API.editJob(id)
-        .then(res => this.loadJobs())
+        .then(res => {
+            console.log(res)
+            this.loadJobs()})
         .catch(err => console.log(err))
     }
 
@@ -54,7 +48,9 @@ class DatabasePage extends React.Component {
         return (
             <Container>
                 <Logo image={logoImage[0].image} name={logoImage[0].name} />
-                <DatabaseData results={this.state.results}/>            
+                <DatabaseData 
+                results={this.state.results}
+                deleteJob={this.deleteJob}/>            
             </Container>
         )
     }

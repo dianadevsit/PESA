@@ -18,20 +18,19 @@ module.exports = {
       .catch(err => res.status(422).json(err));
   },
   create: function(req, res) {
-    console.log("creating pesa")
     Pesa
       .create(req.body)
       .then(dbModel => {
-        console.log("pesa created")
         res.json(dbModel)
       })
       .catch(err => res.status(422).json(err));
   },
   update: function(req, res) {
+    console.log("updating",req.params.id, req.body)
     Pesa
       .findOneAndUpdate({ _id: req.params.id }, req.body)
-      .then(dbModel => res.json(dbModel))
-      .catch(err => res.status(422).json(err));
+      .then(dbModel => console.log(dbModel) || res.json(dbModel))
+      .catch(err => console.log(err) || res.status(422).json(err));
   },
   remove: function(req, res) {
     Pesa

@@ -38,18 +38,6 @@ class SearchPage extends Component {
 
     handleInputChange = event => {
 
-        // const { search, company, location , position, description, date, document } = event.target;
-
-        // this.setState({ 
-        //     search: event.target.search,
-        //     company: event.target.company,
-        //     location: event.target.location,
-        //     position: event.target.position,
-        //     description: event.target.description,
-        //     date: event.target.date,
-        //     document: event.target.document
-        // });
-
         const { name, value } = event.target;
 
         this.setState({
@@ -70,7 +58,7 @@ class SearchPage extends Component {
             position: this.state.position,
             description: this.state.description,
             application_date: this.state.date,
-            documents: this.state.document
+            document: this.state.document
 
         })
       .then(res => this.getJobs())
@@ -93,12 +81,12 @@ class SearchPage extends Component {
             </Row>
             <Row className="ml-5">
                 <Col size="md-12">
-                {/* <SearchForm 
+                <SearchForm 
                search={this.state.search}
-                location={this.state.location}
+                // location={this.state.location}
                 onChange={this.handleInputChange}
                onClick={this.handleFormSubmit}
-                /> */}
+                />
                 
               </Col>
               

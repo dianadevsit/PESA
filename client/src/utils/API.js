@@ -18,8 +18,8 @@ export default {
     return axios.post("/pesa", jobData);
   },
   // Edits job saved in database
-  editJob: function(id) {
-    return axios.put("/api/pesa/"+id)
+  editJob: function(id, jobData) {
+    return axios.put("/api/pesa/"+id, jobData)
   },
 
   search: function(title,location) {

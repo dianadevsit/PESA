@@ -8,7 +8,7 @@ import SearchPage from "./pages/SearchPage";
 
 import DatabasePage from "./pages/DatabasePage";
 
-// import EditPage from "./pages/EditPage";
+import EditPage from "./pages/EditPage";
 
 
 function App() {
@@ -20,7 +20,7 @@ function App() {
         <Route exact path="/" component={IndexPage} />
         <Route exact path="/pesa" component={SearchPage} />
         <Route exact path="/api/pesa" component={DatabasePage} />
-        {/* <Route exact path="api/pesa/:id" component={EditPage} /> */}
+        <Route exact path="/api/pesa/:id" component={EditPage} />
       </Switch>
     </div>
   </Router>
