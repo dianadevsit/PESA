@@ -22,14 +22,17 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(cookieParser());
-app.use(session({keys: ['secretkey1', 'secretkey2', '...']}));
+// app.use(session({keys: ['secretkey1', 'secretkey2', '...']}));
 app.use(flash());
 
+
+// app.use(express.static(path.join(__dirname, "./client/build")));
+
 if (process.env.NODE_ENV === "production") {
-
-  app.use(express.static("/client/build"));
-
+  app.use(express.static(path.join(__dirname, "./client/build")));
 }
+
+
 
 // Connect mongoose
 
