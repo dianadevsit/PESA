@@ -24,7 +24,7 @@ class SearchPage extends Component {
         position: "",
         description: "",
         date: "",
-        document: "",
+        documents: "",
         results: []
     }
 
@@ -58,7 +58,7 @@ class SearchPage extends Component {
             position: this.state.position,
             description: this.state.description,
             application_date: this.state.date,
-            document: this.state.document
+            documents: this.state.documents
 
         })
       .then(res => this.getJobs())
@@ -101,7 +101,7 @@ class SearchPage extends Component {
             position={this.state.position}
             description={this.state.description}
             date={this.state.date}
-            document={this.state.document}
+            documents={this.state.documents}
             handleInputChange={this.handleInputChange}
             handleFormSubmit={this.handleFormSubmit}
             />
