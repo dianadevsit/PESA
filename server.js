@@ -12,6 +12,8 @@ const mongoose = require('mongoose');
 //const LocalStrategy = require('passport-local').Strategy;
 const flash = require('connect-flash');
 
+const routes = require('./routes/routes')(app);
+
 const app = express();
 
 // view engine setup
@@ -25,17 +27,22 @@ app.use(cookieParser());
 // app.use(session({keys: ['secretkey1', 'secretkey2', '...']}));
 app.use(flash());
 
+app.use("/", routes)
+
 
 
 if (process.env.NODE_ENV === "production") {
   
-  app.use(express.static("client/build"));
+    app.use(express.static("client/build"));
 
-  app.get("*", (req, res) => {
+    app.use("*", (req, res) => {
 
-  res.sendFile(path.resolve(__dirname, "client", "build" , "index.html"));
+  res.sendFile(path.join(__dirname, "client", "build" , "index.html"));
+
+})
+
+
 }
-
 
 
 // Connect mongoose
@@ -75,7 +82,7 @@ if (process.env.MONGODB_URI) {
 mongoose.set('useCreateIndex', true);
 
 // Register routes
-require('./routes/routes')(app);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
