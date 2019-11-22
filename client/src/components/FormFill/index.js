@@ -68,7 +68,7 @@ function FormFill(props) {
           Submit
         </button>
         
-        <Link to="api/pesa" className={window.location.pathname === "api/pesa"}>
+        <Link to="view/pesa" className={window.location.pathname === "view/pesa"}>
             <button className="btn btn-success mt-5 ml-5">
                 View Jobs
             </button>
