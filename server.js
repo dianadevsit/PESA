@@ -27,19 +27,6 @@ app.use(flash());
 
 
 
-// if (process.env.NODE_ENV === "production") {
-  
-//   app.use(express.static("client/build"));
-
-  // app.get("*", (req, res) => {
-
-  // res.sendFile(path.resolve(__dirname, "client", "build" , "index.html"));
-// })
-
-// }
-
-
-
 // Connect mongoose
 
 const databaseUri = "mongodb://localhost/job_search";
@@ -59,6 +46,17 @@ mongoose.set('useCreateIndex', true);
 
 // Register routes
 require('./routes/routes')(app);
+
+if (process.env.NODE_ENV === "production") {
+  
+  app.use(express.static("client/build"));
+
+  app.get("*", (req, res) => {
+
+  res.sendFile(path.resolve(__dirname, "client", "build" , "index.html"));
+})
+
+}
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
