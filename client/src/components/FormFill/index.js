@@ -55,7 +55,7 @@ function FormFill(props) {
         />
         <label htmlFor="job-title" className="mt-5 ml-2 text-center font-weight-bold">Document Submitted</label>
         <input
-          value={props.document}
+          value={props.documents}
           onChange={props.handleInputChange}
           name="document"
           type="text"
