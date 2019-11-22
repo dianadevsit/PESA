@@ -19,8 +19,8 @@ function App() {
       <Switch>
         <Route exact path="/" component={IndexPage} />
         <Route exact path="/pesa" component={SearchPage} />
-        <Route exact path="/api/pesa" component={DatabasePage} />
-        <Route exact path="/api/pesa/:id" component={EditPage} />
+        <Route exact path="/view/pesa" component={DatabasePage} />
+        <Route exact path="/view/pesa/:id" component={EditPage} />
       </Switch>
     </div>
   </Router>

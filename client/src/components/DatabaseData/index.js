@@ -16,7 +16,7 @@ function DatabaseData(props) {
           <p>DOCUMENT: {result.documents} </p>
 
           {/* edit button */}
-          <Link to={"/api/pesa/"+ result._id} className={window.location.pathname === "/api/pesa"+ result._id}>
+          <Link to={"/view/pesa/"+ result._id} className={window.location.pathname === "/view/pesa"+ result._id}>
             <button className="card-button btn btn-success">
               Edit
             </button>
