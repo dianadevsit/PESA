@@ -55,25 +55,6 @@ if (process.env.MONGODB_URI) {
 }
 
 
-
-// Configure passport middleware
-// app.use(passport.initialize());
-// app.use(passport.session());
-
-// // Configure passport-local to use account model for authentication
-// // const User = require('./models/user');
-
-// passport.use(new LocalStrategy(User.authenticate()));
-
-// passport.serializeUser(User.serializeUser());
-// passport.deserializeUser(User.deserializeUser());
-
-// mongoose.connect('mongodb://localhost/job_search', { useNewUrlParser: true, useUnifiedTopology: true }, function(err) {
-//   if (err) {
-//     console.log('Could not connect to mongodb on localhost. Ensure that you have mongodb running on localhost and mongodb accepts connections on standard ports!');
-//   }
-// });
-
 mongoose.set('useCreateIndex', true);
 
 // Register routes
