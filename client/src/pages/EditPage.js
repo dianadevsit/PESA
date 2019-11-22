@@ -14,14 +14,13 @@ import API from "../utils/API"
 class EditPage extends Component {
 
     state = {
-        result: [],
-        id:"",
         company_name: "",
         location: "",
         position: "",
         description: "",
         application_date: "",
-        documents: ""
+        documents: "",
+        message: ""
     }
 
 
@@ -78,7 +77,15 @@ class EditPage extends Component {
         API.editJob(this.props.match.params.id, this.state)
         .then(editedJob => {
           console.log(editedJob)
-          this.setState(editedJob)
+          this.setState({
+            company_name: "",
+            location: "",
+            position: "",
+            description: "",
+            application_date: "",
+            documents: "",
+            message: "JOB DETAILS SAVED"
+          })
         })      
         .catch(err => console.log(err));
 
@@ -102,6 +109,7 @@ class EditPage extends Component {
             
             <div className="ml-5">
                 <EditpageData 
+                message={this.state.message}
                 key={this.state.id}
                 company_name={this.state.company_name}
                 location={this.state.location}

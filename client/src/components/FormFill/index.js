@@ -44,7 +44,7 @@ function FormFill(props) {
           className="form-control w-75 mt-5 d-inline ml-5"
           placeholder="description"
         />
-        <label htmlFor="job-title" className="mt-5 ml-4 text-center font-weight-bold">Application Date</label>
+        <label htmlFor="date" className="mt-5 ml-4 text-center font-weight-bold">Application Date</label>
         <input
           value={props.date}
           onChange={props.handleInputChange}
@@ -53,14 +53,14 @@ function FormFill(props) {
           className="form-control w-75 mt-5 d-inline ml-5"
           placeholder="MM/DD/YYYY"
         />
-        <label htmlFor="job-title" className="mt-5 ml-2 text-center font-weight-bold">Document Submitted</label>
+        <label htmlFor="documents" className="mt-5 ml-2 text-center font-weight-bold">Document Submitted</label>
         <input
           value={props.documents}
           onChange={props.handleInputChange}
-          name="document"
+          name="documents"
           type="text"
           className="form-control w-75 mt-5 d-inline ml-4"
-          placeholder="document"
+          placeholder="documents"
         />
         <br />
         <div className="d-flex justify-content-center align-items-center">
