@@ -9,7 +9,7 @@ module.exports = function(app) {
     .post("/pesa", pesaController.create)
     .put("/api/pesa/:id", pesaController.update)
     .delete("/api/pesa/:id", pesaController.remove)
-    .get("/", (req, res) => {
+    .get("*", (req, res) => {
         res.sendFile(path.join(__dirname, "../client/build/index.html"));
     })
 }
