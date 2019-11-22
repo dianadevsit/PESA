@@ -61,7 +61,21 @@ class SearchPage extends Component {
             documents: this.state.documents
 
         })
-      .then(res => this.getJobs())
+      .then(res => {
+
+          this.setState({
+            search: "",
+            company: "",
+            location: "",
+            position: "",
+            description: "",
+            date: "",
+            documents: "",
+          })
+        
+        
+        
+        })
       .catch(err => console.log(err));
 
     }

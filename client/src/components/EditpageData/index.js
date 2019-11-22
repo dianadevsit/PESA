@@ -4,6 +4,8 @@ function EditpageData(props) {
 
     return (
       <form className="form-group"  onSubmit={props.handleFormSubmit}>
+
+          
           
         <label htmlFor="company_name" className="mt-5 text-center font-weight-bold d-inline ml-n2">COMPANY</label>
             <input
@@ -57,13 +59,20 @@ function EditpageData(props) {
           type="text"
           className="form-control w-75 mt-5 d-inline ml-5"
         />
+
+         <span className="mt-3 ml-4 text-center d-block">{props.message}</span>
               {/* save button */}
               <div className="d-flex justify-content-center align-items-center mt-3">
-            <button className="card-button btn btn-success ml-3" role="submit">
+
+            <button className="card-button btn btn-success ml-3 d-block" role="submit">
                 Save
             </button>
+            <br />
+            
 
             </div>
+
+           
           
       </form>
     );
