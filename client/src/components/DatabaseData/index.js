@@ -5,7 +5,7 @@ import { Link } from "react-router-dom"
 function DatabaseData(props) {
   return (
     <ul className="list-group">
-      {props.results.map(result => (
+      {props.results.state.map(result => (
         <li key={result._id} className="list-group-item card-body font-weight-bold mt-3">
           <p>ID: {result._id} </p>
           <p>COMPANY: {result.company_name}</p>

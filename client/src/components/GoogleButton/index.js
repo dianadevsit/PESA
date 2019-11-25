@@ -1,10 +1,16 @@
 import React from "react"
 
 function GoogleButton() {
+    // move google button to the right
     return (
-        <div className="g-signin2 float-right mt-4" data-onsuccess="onSignIn"></div>
+        <div class="g-signin2" 
+        data-onsuccess="onSignIn"
+        data-scope="https://www.googleapis.com/auth/plus.login"
+        data-accesstype="offline"
+        data-redirecturi="https://pesajobs.herokuapp.com/"></div>
     )
 }
+
 
 export default GoogleButton;
 
