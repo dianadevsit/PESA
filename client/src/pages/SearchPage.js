@@ -14,6 +14,7 @@ import logoImage from "../images.json";
 
 import API from "../utils/API"
 
+const faker = require('faker');
 
 class SearchPage extends Component {
     state = {
@@ -29,12 +30,10 @@ class SearchPage extends Component {
     }
 
     componentDidMount() {
-
-    //   API.search("web developer, boston")
-    //   .then(res => this.setState({ results: res.data.message }))
-    //   .catch(err => console.log(err));
-
+        var randomName = faker.name.findName(); // Rowan Nikolaus
+        console.log('rowan', randomName);
     }
+
 
     handleInputChange = event => {
 
