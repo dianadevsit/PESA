@@ -12,9 +12,8 @@ import FormFill from "../components/FormFill"
 
 import logoImage from "../images.json";
 
-import API from "../utils/API"
-
-const faker = require('faker');
+import API from "../utils/API";
+import {JobCard} from './jobCard';
 
 class SearchPage extends Component {
     state = {
@@ -26,12 +25,13 @@ class SearchPage extends Component {
         description: "",
         date: "",
         documents: "",
-        results: []
-    }
-
-    searchList() {
-        // var randomName = faker.name.findName(); // Rowan Nikolaus
-        // console.log('rowan', randomName);
+        results: [],
+        job :  {
+            title : 'Software Engineer', 
+            description: 'Lady Luck', 
+            companyName: 'Cowabunga', 
+            location: 'Salem, MA'
+        }
     }
 
 
@@ -87,6 +87,11 @@ class SearchPage extends Component {
         
             <div>
             <div className="d-flex justify-content-between border-bottom ml-2 mr-2">
+            <Row>
+                <JobCard 
+                    job={this.state.job}
+                />
+            </Row>
             <Row>
                 <Col size="md-2">
                 <Logo image={logoImage[0].image} name={logoImage[0].name} />
