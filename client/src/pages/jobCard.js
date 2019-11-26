@@ -6,12 +6,12 @@ const faker = require('faker');
 
 const useStyles = makeStyles({
     card: {
-        minWidth: 275,
-        backgroundColor: '#FFE9B1'
+        minWidth: 600,
+        backgroundColor: '#74777E'
     },
     bullet: {
         display: 'inline-block',
-        margin: '0 2px',
+        margin: '0 3px',
         transform: 'scale(0.8)',
     },
     title: {
@@ -43,7 +43,7 @@ export const JobCard = ({job}) => {
             </Typography>
         </CardContent>
         <CardActions>
-            <Button size="small">Learn More</Button>
+            <Button size="small">Save to Database</Button>
         </CardActions>
     </Card>
         )

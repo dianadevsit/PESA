@@ -7,6 +7,7 @@ import Logo from "../components/Logo";
 import GoogleButton from "../components/GoogleButton";
 
 import logoImage from "../images.json";
+import SearchPage from './SearchPage';
 
 
 function IndexPage() {
