@@ -15,7 +15,7 @@ function FormFill(props) {
           name="company"
           type="text"
           className="form-control w-75 mt-5 d-inline ml-5"
-          placeholder="company"
+          placeholder="company eats apples"
         />
         <label htmlFor="location" className="ml-5 mt-5 pl-5 text-center font-weight-bold">Location</label>
         <input
