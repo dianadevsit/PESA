@@ -29,9 +29,9 @@ class SearchPage extends Component {
         results: []
     }
 
-    componentDidMount() {
-        var randomName = faker.name.findName(); // Rowan Nikolaus
-        console.log('rowan', randomName);
+    searchList() {
+        // var randomName = faker.name.findName(); // Rowan Nikolaus
+        // console.log('rowan', randomName);
     }
 
 
