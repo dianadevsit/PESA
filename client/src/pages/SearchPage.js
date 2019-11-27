@@ -14,6 +14,8 @@ import logoImage from "../images.json";
 
 import API from "../utils/API"
 
+import "../components/SearchResult/search.css";
+
 
 class SearchPage extends Component {
     state = {
@@ -86,11 +88,17 @@ class SearchPage extends Component {
         return (
 
         
-            <div>
+        <div>
             <div className="d-flex justify-content-between border-bottom ml-2 mr-2">
+            <div id ="search">  
+            <div id = "picture2">
             <Row>
+              
                 <Col size="md-2">
+                <div id = "picture2">
                 <Logo image={logoImage[0].image} name={logoImage[0].name} />
+                </div>
+            
                 </Col>
             </Row>
             <Row className="ml-5">
@@ -108,6 +116,8 @@ class SearchPage extends Component {
             </Row>
             </div>
             
+            
+            
             <div className="ml-5">
             <FormFill 
             company={this.state.company}
@@ -119,12 +129,14 @@ class SearchPage extends Component {
             handleInputChange={this.handleInputChange}
             handleFormSubmit={this.handleFormSubmit}
             />
-           
-            </div>
-
-            </div>
+            
+           </div>
+           </div>
+            
+    </div>    
         
-         
+        
+        </div> 
         )
     }
 
