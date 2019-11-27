@@ -18,18 +18,18 @@ function IndexPage() {
           <Row>
             <Col size="md-12">
                <p className="mt-5">
-                  Nunc pharetra finibus est at efficitur. Praesent sed congue diam. Integer gravida dui
-                  mauris, ut interdum nunc egestas sed. Aenean sed mollis diam. Nunc aliquet risus ac finibus
-                  porta. Nam quis arcu non lectus tincidunt fermentum. Suspendisse aliquet orci porta quam
-                  semper imperdiet. Praesent euismod mi justo, faucibus scelerisque risus cursus in. Sed
-                  rhoncus mollis diam, sit amet facilisis lectus blandit at.
+               PESA is a Personal Employment Search Assistant that will assist you in tracking your job search, resume and cover letter 
+               submissions, name and contact information, interviews and appointments. You can enter and retrieve important notes and comments, 
+               rate employers, and enter your assessment of the position. Employment search APIs are integrated to search directly within the 
+               PESA application. Future versions of PESA will include the following: integration with clocks, alarms and calendars, 
+               transportation planning, ride sharing, commuter resources, bus and train schedules, bicycle routes, parking and EV charging 
+               locators, navigation, work assignment reminder, work time-clock, work site locations, work related expenses, reimbursement, 
+               benefits and retirement investment tracking.
                 </p>
                 <p className="mt-5">
-                  Nunc pharetra finibus est at efficitur. Praesent sed congue diam. Integer gravida dui
-                  mauris, ut interdum nunc egestas sed. Aenean sed mollis diam. Nunc aliquet risus ac finibus
-                  porta. Nam quis arcu non lectus tincidunt fermentum. Suspendisse aliquet orci porta quam
-                  semper imperdiet. Praesent euismod mi justo, faucibus scelerisque risus cursus in. Sed
-                  rhoncus mollis diam, sit amet facilisis lectus blandit at.
+                PESA will be cloud based, hosted on the Internet and locally resided on your computer, tablet and phone. PESA will be secure, 
+                compliant with ADA Title 3, Web Content Accessibility Guidelines 2.1, Section 508, the European Standard for ICT Accessibility 
+                EN301549, and will be continuously tested, black box scanned and patched for security after deployment.
                 </p>
                       
             </Col>
