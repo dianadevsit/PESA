@@ -15,7 +15,7 @@ function FormFill(props) {
           name="company"
           type="text"
           className="form-control w-75 mt-5 d-inline ml-5"
-          placeholder="company"
+          placeholder="company eats apples"
         />
         <label htmlFor="location" className="ml-5 mt-5 pl-5 text-center font-weight-bold">Location</label>
         <input
@@ -53,14 +53,14 @@ function FormFill(props) {
           className="form-control w-75 mt-5 d-inline ml-5"
           placeholder="MM/DD/YYYY"
         />
-        <label htmlFor="documents" className="mt-5 ml-2 text-center font-weight-bold">Document Submitted</label>
+        <label htmlFor="documents" className="mt-5 ml-2 text-center font-weight-bold">Notes</label>
         <input
           value={props.documents}
           onChange={props.handleInputChange}
           name="documents"
           type="text"
           className="form-control w-75 mt-5 d-inline ml-4"
-          placeholder="documents"
+          placeholder="Enter Notes"
         />
         <br />
         <div className="d-flex justify-content-center align-items-center">
