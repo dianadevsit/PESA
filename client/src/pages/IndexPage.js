@@ -45,8 +45,7 @@ function IndexPage() {
               porta. Nam quis arcu non lectus tincidunt fermentum. Suspendisse aliquet orci porta quam
               semper imperdiet. Praesent euismod mi justo, faucibus scelerisque risus cursus in. Sed
               rhoncus mollis diam, sit amet facilisis lectus blandit at.
-                </p>
-
+            </p>
           </Col>
 
         </Row>
