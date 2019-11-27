@@ -9,34 +9,73 @@ import GoogleButton from "../components/GoogleButton";
 import logoImage from "../images.json";
 import SearchPage from './SearchPage';
 
+import CareerServiceImage1 from "../images.json";
+
 
 function IndexPage() {
-    return (
-        <Container>
+
+  console.log('CareerServiceImage1:', CareerServiceImage1);
+
+  return (
+
+    <div id="style">
+      <div id="logo">
+        <div id="picture">
           <Logo image={logoImage[0].image} name={logoImage[0].name} />
-          <GoogleButton />
-          <Row>
-            <Col size="md-12">
-               <p className="mt-5">
-               PESA is a Personal Employment Search Assistant that will assist you in tracking your job search, resume and cover letter 
-               submissions, name and contact information, interviews and appointments. You can enter and retrieve important notes and comments, 
-               rate employers, and enter your assessment of the position. Employment search APIs are integrated to search directly within the 
-               PESA application. Future versions of PESA will include the following: integration with clocks, alarms and calendars, 
-               transportation planning, ride sharing, commuter resources, bus and train schedules, bicycle routes, parking and EV charging 
-               locators, navigation, work assignment reminder, work time-clock, work site locations, work related expenses, reimbursement, 
-               benefits and retirement investment tracking.
+          <div id="indexdetail">
+            <h2>Personal Employment Search Assistant</h2>
+            
+          </div>
+          <div>
+            <GoogleButton />
+          </div>
+        </div>
+        <Row className="row">
+          <Col size="md-12">
+            <p className="mt-5">
+              Nunc pharetra finibus est at efficitur. Praesent sed congue diam. Integer gravida dui
+              mauris, ut interdum nunc egestas sed. Aenean sed mollis diam. Nunc aliquet risus ac finibus
+              porta. Nam quis arcu non lectus tincidunt fermentum. Suspendisse aliquet orci porta quam
+              semper imperdiet. Praesent euismod mi justo, faucibus scelerisque risus cursus in. Sed
+              rhoncus mollis diam, sit amet facilisis lectus blandit at.
                 </p>
-                <p className="mt-5">
-                PESA will be cloud based, hosted on the Internet and locally resided on your computer, tablet and phone. PESA will be secure, 
-                compliant with ADA Title 3, Web Content Accessibility Guidelines 2.1, Section 508, the European Standard for ICT Accessibility 
-                EN301549, and will be continuously tested, black box scanned and patched for security after deployment.
-                </p>
-                      
-            </Col>
-          </Row>
-        </Container>
-    );
-  
+            <p className="mt-5">
+              Nunc pharetra finibus est at efficitur. Praesent sed congue diam. Integer gravida dui
+              mauris, ut interdum nunc egestas sed. Aenean sed mollis diam. Nunc aliquet risus ac finibus
+              porta. Nam quis arcu non lectus tincidunt fermentum. Suspendisse aliquet orci porta quam
+              semper imperdiet. Praesent euismod mi justo, faucibus scelerisque risus cursus in. Sed
+              rhoncus mollis diam, sit amet facilisis lectus blandit at.
+            </p>
+          </Col>
+
+        </Row>
+        <div id="image1">
+
+          {
+
+            CareerServiceImage1.filter((item) => {
+              return item.name.includes('Service')
+            }).map((el) => {
+              return <img
+                key={el.id}
+                className={'career-img'}
+                name={el.name}
+                src={el.image}
+              />
+            })
+
+          }
+
+
+        </div>
+      </div>
+    </div>
+
+
+
+
+  );
+
 }
-  
-  export default IndexPage;
+
+export default IndexPage;

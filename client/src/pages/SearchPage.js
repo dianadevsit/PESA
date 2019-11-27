@@ -12,6 +12,9 @@ import logoImage from "../images.json";
 import API from "../utils/API";
 import { JobCard } from './jobCard';
 import { SearchStyles } from '../styles/searchStyles';
+import { SearchFilter } from './searchFilter';
+
+import "../components/SearchResult/search.css";
 
 
 class SearchPage extends Component {
@@ -86,6 +89,59 @@ class SearchPage extends Component {
 
             <div>
                 <div className="d-flex justify-content-between border-bottom ml-2 mr-2">
+                    <div id="search">
+                        <div id="picture2">
+                            <Row>
+
+                                <Col size="md-2">
+                                    <div id="picture2">
+                                        <Logo image={logoImage[0].image} name={logoImage[0].name} />
+                                    </div>
+
+                                </Col>
+                            </Row>
+                            <Row className="ml-5">
+                                <Col size="md-12">
+                                    <SearchFilter />
+                                    {/* <SearchForm
+                                        search={this.state.search}
+                                        // location={this.state.location}
+                                        onChange={this.handleInputChange}
+                                        onClick={this.handleFormSubmit}
+                                    /> */}
+
+                                </Col>
+
+
+                            </Row>
+                        </div>
+
+
+
+                        <div className="ml-5">
+                            <FormFill
+                                company={this.state.company}
+                                location={this.state.location}
+                                position={this.state.position}
+                                description={this.state.description}
+                                date={this.state.date}
+                                documents={this.state.documents}
+                                handleInputChange={this.handleInputChange}
+                                handleFormSubmit={this.handleFormSubmit}
+                            />
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        )
+
+
+                /* </div> 
+
+            <div>
+                <div className="d-flex justify-content-between border-bottom ml-2 mr-2">
                     <Row>
                         <Col size="md-2">
                             <Logo image={logoImage[0].image} name={logoImage[0].name} />
@@ -111,13 +167,12 @@ class SearchPage extends Component {
                     </Row>
                 </div>
 
-            </div>
+            </div> */
 
 
-        )
-    }
-
-
-}
-
+            }
+        
+        
+        }
+        
 export default SearchPage;
