@@ -1,50 +1,14 @@
 /* CSS FILE FOR PESA */
 
 body {
-  background-color: blanchedalmond;
-  margin: 10;  
-  /* font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif; */
-    font-family: 'Gupter', serif;
-    
+    sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: white;
-
 }
-
-#logo {
-  background-color: blanchedalmonds;
-  margin: 10;
-  /* font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif; */
-    font-family: 'Gupter', serif;
-    font-size: 20px;
-}
-
-#picture {
-  text-align: center;
-
-}
-
-#picture img {
-  width: 128px;
-}
-
-#indexdetail {
-  margin-top:29px;
-}
-#style {
-  text-align: center;
-  padding: 32px;
-}
-
-.inline {
-  display: inline-block;
-}
-
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
