@@ -1,3 +1,5 @@
+/* CSS FILE FOR PESA */
+
 body {
   background-color: blanchedalmond;
   margin: 10;  
@@ -8,6 +10,7 @@ body {
     
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: white;
 }
 
 #logo {
@@ -47,22 +50,47 @@ code {
     monospace;
 }
 
-.career-img {
-  height: 120px;
+#index-page {
+  background-image: url("https://www.1100architect.com/staging1100/wp-content/uploads/2018/12/1100-Architect_Perry-World-House_Aaron_2240x1250.jpg");
+  opacity: 0.9;
+  background-color: #43d9b8;
+  color: black;
+  height: 600px;
 }
 
-@media screen and (min-width: 715px) {
-  .row {
-    width: 715px;
-    margin: 0 auto;
-  }
+#index-page p {
+  font-size: 20px;
 }
 
-
-@media screen and (max-width: 661px) {
-  .career-img {
-    width: 80%;
-    height: auto;
-    margin: 0;
-  }
+#search-form {
+ color: black;
+ /* background-color:#43d9b8 ; */
+ background-color: #989898;
+  
 }
+
+#search-page {
+  background-color: #989898;
+}
+
+#form-fill {
+  background-color: blanchedalmond;
+}
+
+#data-page {
+  color: black;
+  background-color: #989898;
+   
+ }
+
+ .card-body {
+  background-color: blanchedalmond;
+ }
+
+ #edit-page {
+  background-color: #989898;
+ }
+
+ #edit-data {
+  background-color: blanchedalmond;
+ }

@@ -1,13 +1,16 @@
+// import react and link
+
 import React from "react";
 
 import { Link } from "react-router-dom";
 
-// Using the datalist element we can create autofill suggestions based on the props.breeds array
+// a form component for search page, to get information from user
+
 function FormFill(props) {
   return (
-    <form>
-      <div>
-      <div className="form-group">
+    <form className="mt-5">
+      <div className="mt-5">
+      <div className="form-group mt-5">
         <label htmlFor="job-title" className="mt-5 text-center font-weight-bold d-inline ml-5">Company Name</label>
         <input
           value={props.company}
@@ -64,12 +67,12 @@ function FormFill(props) {
         />
         <br />
         <div className="d-flex justify-content-center align-items-center">
-        <button onClick={props.handleFormSubmit} className="btn btn-success mt-5">
+        <button onClick={props.handleFormSubmit} className="btn btn-secondary mt-5 mb-3">
           Submit
         </button>
         
         <Link to="view/pesa" className={window.location.pathname === "view/pesa"}>
-            <button className="btn btn-success mt-5 ml-5">
+            <button className="btn btn-secondary mt-5 ml-5 mb-3">
                 View Jobs
             </button>
         </Link>
@@ -80,5 +83,6 @@ function FormFill(props) {
     </form>
   );
 }
+
 
 export default FormFill;

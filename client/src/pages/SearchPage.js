@@ -1,23 +1,24 @@
+// import components and react
+
 import React, { Component } from "react";
-
-import { Container, Row, Col } from "../components/Grid";
-
-import Logo from "../components/Logo";
 
 import SearchForm from "../components/SearchForm"
 
 import SearchResult from "../components/SearchResult"
+
 import FormFill from "../components/FormFill"
-import logoImage from "../images.json";
-import API from "../utils/API";
-import { JobCard } from './jobCard';
-import { SearchStyles } from '../styles/searchStyles';
-import { SearchFilter } from './searchFilter';
+
+import PagesNavBar from "../components/PagesNavbar";
 
 import "../components/SearchResult/search.css";
 
 
+// class for search page
+
 class SearchPage extends Component {
+
+    // state obj for input fields on search page
+
     state = {
 
         search: "",
@@ -36,6 +37,25 @@ class SearchPage extends Component {
         }
     }
 
+    // load this after search page loads
+
+    componentDidMount() {
+
+    //   API.search("web developer, boston")
+    //   .then(res => this.setState({ results: res.data.message }))
+    //   .catch(err => console.log(err));
+
+    }
+
+
+    // google sign out method
+
+    signOut = () => {
+        document.location.href = "https://www.google.com/accounts/Logout?continue=https://appengine.google.com/_ah/logout?continue=http://localhost:3000";
+    }
+
+
+    // handles changes in input fields when user types
 
     handleInputChange = event => {
 
@@ -47,11 +67,18 @@ class SearchPage extends Component {
 
     };
 
+
+    // handles form submission
+
     handleFormSubmit = event => {
-        event.preventDefault();
+
+        // prevent default form submission
+
+        event.preventDefault(); 
 
 
-        console.log(this);
+
+        // save what user typed in database when form submitted
 
         API.saveJob({
             company_name: this.state.company,
@@ -62,117 +89,71 @@ class SearchPage extends Component {
             documents: this.state.documents
 
         })
-            .then(res => {
+      .then(res => {
 
-                this.setState({
-                    search: "",
-                    company: "",
-                    location: "",
-                    position: "",
-                    description: "",
-                    date: "",
-                    documents: "",
-                })
+        // clear input fields after form submission
 
-
-
-            })
-            .catch(err => console.log(err));
+          this.setState({
+            search: "",
+            company: "",
+            location: "",
+            position: "",
+            description: "",
+            date: "",
+            documents: "",
+          })
+        
+        
+        
+        })
+      .catch(err => console.log(err));
 
     }
 
+   
+    // renders the search page using the required components
 
-
-    render() {
-        return (
-
-
-            <div>
-                <div className="d-flex justify-content-between border-bottom ml-2 mr-2">
-                    <div id="search">
-                        <div id="picture2">
-                            <Row>
-
-                                <Col size="md-2">
-                                    <div id="picture2">
-                                        <Logo image={logoImage[0].image} name={logoImage[0].name} />
-                                    </div>
-
-                                </Col>
-                            </Row>
-                            <Row className="ml-5">
-                                <Col size="md-12">
-                                    <SearchFilter />
-                                    {/* <SearchForm
-                                        search={this.state.search}
-                                        // location={this.state.location}
-                                        onChange={this.handleInputChange}
-                                        onClick={this.handleFormSubmit}
-                                    /> */}
-
-                                </Col>
-
-
-                            </Row>
-                        </div>
-
-
-
-                        <div className="ml-5">
-                            <FormFill
-                                company={this.state.company}
-                                location={this.state.location}
-                                position={this.state.position}
-                                description={this.state.description}
-                                date={this.state.date}
-                                documents={this.state.documents}
-                                handleInputChange={this.handleInputChange}
-                                handleFormSubmit={this.handleFormSubmit}
-                            />
-
-                        </div>
-                    </div>
-
-                </div>
+    render () {
+        return (        
+            <div id="search-page">
+                <PagesNavBar signOut={this.signOut}/>
+               
+            {/* <div id="search-form" className="d-flex justify-content-between border-bottom mr-2">
+            
+            <Row>
+                <Col size="md-2">
+                <Logo image={logoImage[0].image} name={logoImage[0].name} />
+                </Col>
+            </Row>
+            <Row className="ml-5">
+                <Col size="md-12">
+                <SearchForm 
+               search={this.state.search}
+                // location={this.state.location}
+                onChange={this.handleInputChange}
+               onClick={this.handleFormSubmit}
+                />
+                
+              </Col>
+              
+                
+            </Row>
+            </div> */}
+            
+            <div id="form-fill" className="ml-5 shadow mt-5 mr-5">
+            
+            <FormFill 
+            company={this.state.company}
+            location={this.state.location}
+            position={this.state.position}
+            description={this.state.description}
+            date={this.state.date}
+            documents={this.state.documents}
+            handleInputChange={this.handleInputChange}
+            handleFormSubmit={this.handleFormSubmit}
+            />
+           
             </div>
-        )
 
-
-                /* </div> 
-
-            <div>
-                <div className="d-flex justify-content-between border-bottom ml-2 mr-2">
-                    <Row>
-                        <Col size="md-2">
-                            <Logo image={logoImage[0].image} name={logoImage[0].name} />
-                        </Col>
-                    </Row>
-                    <Row>
-                        <Col size="md-12">
-                            <SearchForm
-                                search={this.state.search}
-                                // location={this.state.location}
-                                onChange={this.handleInputChange}
-                                onClick={this.handleFormSubmit}
-                            />
-
-                        </Col>
-                        <Row className="ml-5">
-                            <JobCard
-                                job={this.state.job}
-                            />
-                        </Row>
-
-
-                    </Row>
-                </div>
-
-            </div> */
-
-
-            }
-        
-        
-        }
         
 export default SearchPage;

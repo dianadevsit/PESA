@@ -1,27 +1,16 @@
+
 [
     {
-        "id": "8AG",
+    
+        "id": 1,
         "name": "logo",    
         "image" : "/images/logo.jpg"
 
-    },
+    },{
+        "id": 2,
+        "name": "background",
+        "image": "/images/indexBckgrd.jpg"
 
-    {
-        "id": "BP7",
-        "name": "CareerServiceImage1",
-        "image": "/images/Career-Development1.jpg"
-    },
-
-    {
-        "id": "4AG",
-        "name": "CareerServiceImage2",
-        "image": "/images/career-services-center-01.png"
-    },
-
-    {
-        "id": "8AK",
-        "name": "CareerServiceImage3",
-        "image": "/images/career-services.jpg"
     }
 ]
 

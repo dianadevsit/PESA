@@ -1,3 +1,5 @@
+// require collection
+
 const Pesa = require("../models/pesa");
 
 // Defining methods for the pesaController
