@@ -1,4 +1,9 @@
+// import react
+
 import React from "react";
+
+
+// component to display search result to user
 
 function SearchResults(props) {
   return (
@@ -15,5 +20,6 @@ function SearchResults(props) {
     </ul>
   );
 }
+
 
 export default SearchResults;

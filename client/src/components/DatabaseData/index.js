@@ -1,13 +1,17 @@
+// import react and link
+
 import React from "react";
 
 import { Link } from "react-router-dom"
+
+
+// component for database page
 
 function DatabaseData(props) {
   return (
     <ul className="list-group">
       {props.results.map(result => (
-        <li key={result._id} className="list-group-item card-body font-weight-bold mt-3">
-          <p>ID: {result._id} </p>
+        <li key={result._id} className="list-group-item card-body font-weight-bold mt-3 mb-3">
           <p>COMPANY: {result.company_name}</p>
           <p>LOCATION: {result.location} </p>
           <p>POSITION: {result.position} </p>
@@ -17,15 +21,15 @@ function DatabaseData(props) {
 
           {/* edit button */}
           <Link to={"/view/pesa/"+ result._id} className={window.location.pathname === "/view/pesa"+ result._id}>
-            <button className="card-button btn btn-success">
+            <button className="card-button btn btn-secondary">
               Edit
             </button>
-            </Link>
+          </Link>
              
-            {/* delete button */}
-            <button className="card-button btn btn-success ml-3" key={result._id} onClick={() => props.deleteJob(result._id)}>
-              Delete
-            </button>
+          {/* delete button */}
+          <button className="card-button btn btn-secondary ml-3" key={result._id} onClick={() => props.deleteJob(result._id)}>
+            Delete
+          </button>
         </li>
       ))}
     </ul>

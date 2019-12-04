@@ -1,17 +1,19 @@
+// import react components
+
 import React, { Component } from "react";
-
-import { Row, Col } from "../components/Grid";
-
-import Logo from "../components/Logo";
 
 import EditpageData from "../components/EditpageData";
 
-import logoImage from "../images.json";
+import PagesNavBar from "../components/PagesNavbar";
 
 import API from "../utils/API"
 
 
+// edit page class
+
 class EditPage extends Component {
+
+    // state obj with names of input fields 
 
     state = {
         company_name: "",
@@ -24,20 +26,20 @@ class EditPage extends Component {
     }
 
 
+    // when page loads
     componentDidMount = () => {
+
+        // get job from database with same id as id from brower's parameter
 
         API.getJob(this.props.match.params.id)
       
         .then(res => {
           
-            console.log(res.data)
-
-          
             let data = res.data
-          
+
+            // set state to data got from database          
           
             this.setState({ 
-            //   id: data._id,
               company_name: data.company_name,
               location: data.location,
               position: data.position,
@@ -54,6 +56,15 @@ class EditPage extends Component {
 
     }
 
+
+    // sign out method for edit page
+
+    signOut = () => {
+        document.location.href = "https://www.google.com/accounts/Logout?continue=https://appengine.google.com/_ah/logout?continue=http://localhost:3000";
+    }
+
+
+    // handles changes in input field
     
     handleInputChange = event => {
 
@@ -69,23 +80,32 @@ class EditPage extends Component {
     };
 
 
+    // handles form submission
 
     handleFormSubmit = event => {
 
+        // prevent default form submission
+
         event.preventDefault();
+
+
+        // call edit job method with the id and the edited state as arguments
 
         API.editJob(this.props.match.params.id, this.state)
         .then(editedJob => {
-          console.log(editedJob)
-          this.setState({
-            company_name: "",
-            location: "",
-            position: "",
-            description: "",
-            application_date: "",
-            documents: "",
-            message: "JOB DETAILS SAVED"
-          })
+        
+
+            // clear input fields after edited data submission
+
+            this.setState({
+               company_name: "",
+               location: "",
+               position: "",
+               description: "",
+               application_date: "",
+               documents: "",
+               message: "JOB DETAILS SAVED"
+            })
         })      
         .catch(err => console.log(err));
 
@@ -97,17 +117,10 @@ class EditPage extends Component {
         return (
 
         
-            <div>
-            <div className="border-bottom ml-2 mr-2 pb-3 mb-4">
-            <Row>
-                <Col size="md-2">
-                <Logo image={logoImage[0].image} name={logoImage[0].name} />
-                </Col>
-            </Row>
+            <div id="edit-page">
+            <PagesNavBar signOut={this.signOut}/>
             
-            </div>
-            
-            <div className="ml-5">
+            <div id="edit-data" className="ml-5 mt-5 mr-5">
                 <EditpageData 
                 message={this.state.message}
                 key={this.state.id}
@@ -131,5 +144,7 @@ class EditPage extends Component {
 
 
 }
+
+
 
 export default EditPage;

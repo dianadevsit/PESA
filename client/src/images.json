@@ -1,8 +1,14 @@
+
 [
     {
     
+        "id": 1,
         "name": "logo",    
         "image" : "/images/logo.jpg"
 
+    },{
+        "id": 2,
+        "name": "background",
+        "image": "/images/indexBckgrd.jpg"
     }
 ]
