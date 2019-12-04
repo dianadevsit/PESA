@@ -6,6 +6,8 @@ import { Row, Col } from "../components/Grid";
 
 import IndexNavBar from "../components/IndexNavBar";
 
+import SearchPage from './SearchPage';
+
 
 // render function for the index page
 
