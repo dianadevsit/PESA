@@ -10,8 +10,12 @@ import FormFill from "../components/FormFill"
 
 import PagesNavBar from "../components/PagesNavbar";
 
-import API from "../utils/API"
 
+import "../components/SearchResult/search.css";
+
+
+
+// class for search page
 
 // class for search page
 
@@ -28,7 +32,13 @@ class SearchPage extends Component {
         description: "",
         date: "",
         documents: "",
-        results: []
+        results: [],
+        job: {
+            title: '',
+            description: '',
+            companyName: '',
+            location: ''
+        }
     }
 
     // load this after search page loads
@@ -56,9 +66,9 @@ class SearchPage extends Component {
         const { name, value } = event.target;
 
         this.setState({
-            [name] : value
+            [name]: value
         })
-      
+
     };
 
 
@@ -69,6 +79,7 @@ class SearchPage extends Component {
         // prevent default form submission
 
         event.preventDefault(); 
+
 
 
         // save what user typed in database when form submitted
@@ -148,13 +159,5 @@ class SearchPage extends Component {
            
             </div>
 
-            </div>
         
-         
-        )
-    }
-
-
-}
-
 export default SearchPage;

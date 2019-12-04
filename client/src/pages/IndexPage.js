@@ -1,10 +1,21 @@
 // import react and required components
 
+
 import React from "react";
 
 import { Row, Col } from "../components/Grid";
 
 import IndexNavBar from "../components/IndexNavBar";
+
+
+import React from "react";
+
+import { Row, Col } from "../components/Grid";
+
+import IndexNavBar from "../components/IndexNavBar";
+
+import SearchPage from './SearchPage';
+
 
 
 // render function for the index page
