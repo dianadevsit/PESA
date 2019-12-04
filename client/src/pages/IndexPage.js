@@ -1,20 +1,10 @@
 // import react and required components
 
-
 import React from "react";
 
 import { Row, Col } from "../components/Grid";
 
 import IndexNavBar from "../components/IndexNavBar";
-
-
-import React from "react";
-
-import { Row, Col } from "../components/Grid";
-
-import IndexNavBar from "../components/IndexNavBar";
-
-import SearchPage from './SearchPage';
 
 
 
@@ -29,13 +19,12 @@ function IndexPage() {
       <Row>
         <Col size="md-6"></Col>
         <Col size="md-6">
-          <p className="mt-5 font-weight-bold"><strong>
-            Nunc pharetra finibus est at efficitur. Praesent sed congue diam. Integer gravida dui
-            mauris, ut interdum nunc egestas sed. Aenean sed mollis diam. Nunc aliquet risus ac finibus
-            porta. Nam quis arcu non lectus tincidunt fermentum. Suspendisse aliquet orci porta quam
-            semper imperdiet. Praesent euismod mi justo, faucibus scelerisque risus cursus in. Sed
-            rhoncus mollis diam, sit amet facilisis lectus blandit at.
-          </strong></p>             
+          
+          <p className="mt-5 pt-5 mr-2 font-weight-bold"><strong>
+          PESA - Personal Employment Search Assistant is an application that keeps you and your job search in sync.
+          This application is the best for tracking your job applications, application documents, appointments, contacts, interviews, locations, etc. 
+          </strong></p>
+                   
         </Col>
       </Row>
     </div>
