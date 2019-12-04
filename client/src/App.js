@@ -1,3 +1,5 @@
+// import react, router and all the pages
+
 import React from "react";
 
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
@@ -10,6 +12,9 @@ import DatabasePage from "./pages/DatabasePage";
 
 import EditPage from "./pages/EditPage";
 
+
+
+// routing
 
 function App() {
    
