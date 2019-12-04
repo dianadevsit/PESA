@@ -10,8 +10,12 @@ import FormFill from "../components/FormFill"
 
 import PagesNavBar from "../components/PagesNavbar";
 
+
 import "../components/SearchResult/search.css";
 
+
+
+// class for search page
 
 // class for search page
 
